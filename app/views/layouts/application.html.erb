@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MinimApp</title>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <nav class="deep-purple lighten-2">
+    <div class="container "
+      style="width: 95%">
+      <div class="nav-wrapper">
+        <%= link_to "Just Content", home_path, :class => "brand-logo" %>
+
+        <a onclick="$('.sidenav').sidenav('open');"
+          data-target="mobile-demo"
+          class="sidenav-trigger"
+          style="cursor: pointer"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <%= link_to "View content", home_path, :class => "nav-item-right" %>
+          </li>
+          <li>
+            <%= link_to "Create content", new_post_path, :class => "nav-item-right" %>
+          </li>
+        </ul>
+      </div>
+  </nav>
+
+  <ul class="sidenav"
+    id="mobile-demo">
+    <li class="mobile-nav-head deep-purple lighten-2 align-center">Just content</li>
+    <li style="padding: 0 12px 0 12px;"><b>Actions</b></li>
+    <li class="mobile-nav-item">
+      <%= link_to "View content", home_path %>
+    </li>
+    <li class="mobile-nav-item">
+      <%= link_to "Create content", new_post_path %>
+    </li>
+    <li style="padding: 0 12px 0 12px;"><b>Contact</b></li>
+    <li class="mobile-nav-item">
+      <%= link_to "My Website", "http://alex-a-pereira.com", target: "_blank" %>
+    </li>
+    <li class="mobile-nav-item">
+      <%= link_to "Email", "mailto:alex-a-pereira@outlook.com", target: "_blank" %>
+    </li>
+    <li class="mobile-nav-item">
+        <%= link_to "LinkedIn", "https://linkedin.com/in/alex-a-pereira", target: "_blank" %>
+      </li>
+
+
+  </ul>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col s12 m12">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+</body>
+<!-- Initialize instance of sidenav when application.html renders -->
+<script>
+  $(document).on('turbolinks:load', function () {
+    $('.sidenav').sidenav();
+  });
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+</script>
+
+</html>

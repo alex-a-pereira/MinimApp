@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col s12 l10 offset-l1">
+    <div class="card-panel">
+      <h4 style="margin: 0;">Edit some content</h4>
+      <blockquote style="border-left: 5px solid #9575cd">
+        Here you can edit or delete the content. Be mindful when deleting content, because once delete it's gone forever!
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+<%= form_for :post, url: post_path(@post), method: "patch" do |f| %>
+
+<% if @post.errors.any? %>
+<div class="row">
+  <div class="col s12 l10 offset-l1">
+    <ul class="collection">
+      <% @post.errors.full_messages.each do |msg| %>
+      <li class="collection-item">
+        <div>
+          <%= msg %><a class="secondary-content"><i class="material-icons">warning</i></a></div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="input-field col s12">
+    <a><%= f.label :name %></a>
+    
+    <%= f.text_field(:name) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col s12">
+    <a><%= f.label :content %></a>
+    <%= f.text_field :content,  :class => "materialize-textarea" %>
+  </div>
+</div>
+
+<%= f.submit({:class => ' btn deep-purple lighten-2 right '}) %>
+
+<% end %>
