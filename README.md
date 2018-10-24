@@ -15,6 +15,8 @@ https://github.com/rails/jquery-rails
 **Help with RSpec tests**
 https://blog.codeship.com/install-rspec-tutorial/
 https://semaphoreci.com/community/tutorials/how-to-test-rails-models-with-rspec
+**Help with environment variables**
+https://coderwall.com/p/djrfra/pass-the-database-pwd-to-rails-with-an-environment-variable
 
 ### Creator
 [Alex Pereira](mailto:alex-a-pereira@outlook.com)

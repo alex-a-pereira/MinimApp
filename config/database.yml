@@ -3,13 +3,13 @@ development:
   encoding: unicode
   database: just_content_development
   pool: 5
-  username: ENV["PG_USER"]
-  password: ENV["PG_PASS"]
+  username: <%= ENV["PG_USER"] %>
+  password: <%= ENV["PG_PASS"] %>
 
 test:
   adapter: postgresql
   encoding: unicode
   database: just_content_test
   pool: 5
-  username: ENV["PG_USER"]
-  password: ENV["PG_PASS"]
+  username: <%= ENV["PG_USER"] %>
+  password: <%= ENV["PG_PASS"] %>
